@@ -3,18 +3,22 @@ Dhvanil_patel@live.com
 UMass Lowell in course 91.461 GUI Programming I
 Started: 10/21/2014, last updated: 10/25/2014
 last update 12/09/2014
+I got helped from Mihir and Tak! 
+Sorry for late submission, I work in retail and was busy because of blackfriday week.
 file-name: assignment6Java.js
 */
 $(document).ready(function() {
     var tabs = $("#tabs").tabs();
     /* Validator */
-    $.validator.addMethod('GreaterThanStartRow', function(value, element, param) {
+    $.validator.addMethod('GreaterThanStartRow', function(value,
+        element, param) {
         if (numTwo.value === "") {
             return true;
         }
         return parseInt(numTwo.value) >= parseInt(numOne.value);
     }, "The Last row must be greater than the First row.");
-    $.validator.addMethod('GreaterThanStartColumn', function(value, element, param) {
+    $.validator.addMethod('GreaterThanStartColumn', function(value,
+        element, param) {
         return parseInt(numFour.value) >= parseInt(numThree.value);
     }, "The Last column must be greater than the Start column.");
     $('#form').validate({
@@ -40,9 +44,11 @@ $(document).ready(function() {
         },
         onkeyup: function(element) {
             if ($('form').valid()) {
-                $('form').find(":submit").attr("disabled", false);
+                $('form').find(":submit").attr("disabled",
+                    false);
             } else {
-                $('form').find(":submit").attr("disabled", true);
+                $('form').find(":submit").attr("disabled",
+                    true);
             }
         },
         /* "The validation plugin allows you to configure these class names"
@@ -76,16 +82,22 @@ $(document).ready(function() {
                 var cellStyle = "padding: 10px; color: black;";
                 if (i == numOne && j == numThree) {
                     cellText = document.createTextNode("");
-                   cell.setAttribute("style", cellStyle + "background-color: white");
+                    cell.setAttribute("style", cellStyle +
+                        "background-color: white");
                 } else if (i == numOne) {
                     cellText = document.createTextNode(j - 1);
-                    cell.setAttribute("style", cellStyle + "background-color: purple");
+                    cell.setAttribute("style", cellStyle +
+                        "background-color: purple");
                 } else if (j == numThree) {
                     cellText = document.createTextNode(i - 1);
-                   cell.setAttribute("style", cellStyle + "background-color: purple");
+                    cell.setAttribute("style", cellStyle +
+                        "background-color: purple");
                 } else {
-                    cellText = document.createTextNode((i - 1) * (j - 1));
-                   cell.setAttribute("style", cellStyle + "background-color: yellow");                }
+                    cellText = document.createTextNode((i - 1) * (j -
+                        1));
+                    cell.setAttribute("style", cellStyle +
+                        "background-color: yellow");
+                }
                 /* add the text to cell */
                 cell.appendChild(cellText);
                 /* add the cell to row */
@@ -112,8 +124,13 @@ $(document).ready(function() {
         /* create a new tab with close button next to it
          * http://stackoverflow.com/questions/14357614/add-close-button-to-jquery-ui-tabs
          */
-        tabslist.append('<li id="li' + nextTabNo + '"><a href="#tab' + nextTabNo + '">' + 'Tab ' + (nextTabNo + 1) + '<\/a><input name="check" type="checkbox" id="checkbox' +
-            nextTabNo + '"><span id="tabspan' + nextTabNo + '" class="ui-icon ui-icon-circle-close"></span><\/li>');
+        tabslist.append('<li id="li' + nextTabNo +
+            '"><a href="#tab' + nextTabNo + '">' + 'Tab ' +
+            (nextTabNo + 1) +
+            '<\/a><input name="check" type="checkbox" id="checkbox' +
+            nextTabNo + '"><span id="tabspan' + nextTabNo +
+            '" class="ui-icon ui-icon-circle-close"></span><\/li>'
+        );
         // add content to the new tab */
         tabsdiv.append('<div id="tab' + nextTabNo + '"><\/div>');
         /* create content table to the new tab */
@@ -123,7 +140,8 @@ $(document).ready(function() {
     });
     /* When close span clicked, it will close the tab that are closest to which you clicked */
     tabs.delegate("span.ui-icon-circle-close", "click", function() {
-        var panelId = $(this).closest("li").remove().attr("aria-controls");
+        var panelId = $(this).closest("li").remove().attr(
+            "aria-controls");
         $("#" + panelId).remove();
         tabs.tabs("refresh");
     });
