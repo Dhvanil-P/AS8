@@ -16,11 +16,11 @@ $(document).ready(function() {
             return true;
         }
         return parseInt(numTwo.value) >= parseInt(numOne.value);
-    }, "The Last row must be greater than the First row.");
+    }, "The Maximum Column Value must be greater than Minimum Column Value.");
     $.validator.addMethod('GreaterThanStartColumn', function(value,
         element, param) {
         return parseInt(numFour.value) >= parseInt(numThree.value);
-    }, "The Last column must be greater than the Start column.");
+    }, "The Maximum Row Value must be greater than Minimum Row Value.");
     $('#form').validate({
         rules: {
             numOne: {
