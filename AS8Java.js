@@ -1,4 +1,10 @@
-
+/*Dhvanil Patel
+Dhvanil_patel@live.com
+UMass Lowell in course 91.461 GUI Programming I
+Started: 10/21/2014, last updated: 10/25/2014
+last update 12/09/2014
+file-name: assignment6Java.js
+*/
 $(document).ready(function() {
     var tabs = $("#tabs").tabs();
     /* Validator */
