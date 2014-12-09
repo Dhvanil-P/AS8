@@ -25,7 +25,7 @@ $(document).ready(function() {
             numOne: {
                 required: true,
                 digits: true
-            },
+            }
             numTwo: {
                 required: true,
                 digits: true,
@@ -102,7 +102,7 @@ $(document).ready(function() {
         /* appends <table> into preview */
         preview.appendChild(tbl);
     }
-    var tabsdiv = $("#tabs");
+     var tabsdiv = $("#tabs");
     var tabslist = tabsdiv.find("ul");
     var nextTabNo = tabslist.find("li").length;
     /* When create button click, a new tab will generate */
@@ -115,7 +115,7 @@ $(document).ready(function() {
         /* create a new tab with close button next to it
          * http://stackoverflow.com/questions/14357614/add-close-button-to-jquery-ui-tabs
          */
-        tabslist.append('<li id="li' + nextTabNo + '"><a href="#tab' + nextTabNo + '">' + 'Tab ' + (nextTabNo + 1) + +
+        tabslist.append('<li id="li' + nextTabNo + '"><a href="#tab' + nextTabNo + '">' + 'Tab ' + (nextTabNo + 1) + '<\/a><input name="check" type="checkbox" id="checkbox' +
             nextTabNo + '"><span id="tabspan' + nextTabNo + '" class="ui-icon ui-icon-circle-close"></span><\/li>');
         // add content to the new tab */
         tabsdiv.append('<div id="tab' + nextTabNo + '"><\/div>');
@@ -129,7 +129,8 @@ $(document).ready(function() {
         var panelId = $(this).closest("li").remove().attr("aria-controls");
         $("#" + panelId).remove();
         tabs.tabs("refresh");
-		$('#delete').click(function() {
+    });
+    $('#delete').click(function() {
         /* push id in the selected */
         var selected = [];
         $('input:checkbox:checked').each(function() {
@@ -144,5 +145,4 @@ $(document).ready(function() {
         }
         $('#tabs').tabs("refresh");
     });
-    
 });
