@@ -1,12 +1,3 @@
-/*Dhvanil Patel
-Dhvanil_patel@live.com
-UMass Lowell in course 91.461 GUI Programming I
-Started: 10/21/2014, last updated: 12/04/2014
-file-name: assignment6Java.js
-I got help from Mihir and Tak and I learned from them.
-Looking forward to learn everything in winter vacation with learnable.
-
-*/
 
 $(document).ready(function() {
     var tabs = $("#tabs").tabs();
@@ -16,16 +7,16 @@ $(document).ready(function() {
             return true;
         }
         return parseInt(numTwo.value) >= parseInt(numOne.value);
-    }, "The Maximum Column Value must be greater than the Minimum Column Value.");
+    }, "The Last row must be greater than the First row.");
     $.validator.addMethod('GreaterThanStartColumn', function(value, element, param) {
         return parseInt(numFour.value) >= parseInt(numThree.value);
-    }, "The Maximum Row Value must be greater than the Minimum Row value.");
+    }, "The Last column must be greater than the Start column.");
     $('#form').validate({
         rules: {
             numOne: {
                 required: true,
                 digits: true
-            }
+            },
             numTwo: {
                 required: true,
                 digits: true,
@@ -51,7 +42,8 @@ $(document).ready(function() {
         /* "The validation plugin allows you to configure these class names"
          * http://stackoverflow.com/questions/6168926/jquery-validation-how-to-make-fields-red
          */
-       
+        errorClass: "my-error-class",
+        validClass: "my-valid-class"
     });
 
     function crTable(nextTabNo) {
@@ -78,17 +70,16 @@ $(document).ready(function() {
                 var cellStyle = "padding: 10px; color: black;";
                 if (i == numOne && j == numThree) {
                     cellText = document.createTextNode("");
-                    cell.setAttribute("style", cellStyle + "background-color: white");
+                   cell.setAttribute("style", cellStyle + "background-color: white");
                 } else if (i == numOne) {
                     cellText = document.createTextNode(j - 1);
                     cell.setAttribute("style", cellStyle + "background-color: purple");
                 } else if (j == numThree) {
                     cellText = document.createTextNode(i - 1);
-                    cell.setAttribute("style", cellStyle + "background-color: purple");
+                   cell.setAttribute("style", cellStyle + "background-color: purple");
                 } else {
                     cellText = document.createTextNode((i - 1) * (j - 1));
-                    cell.setAttribute("style", cellStyle + "background-color: yellow");
-                }
+                   cell.setAttribute("style", cellStyle + "background-color: yellow");                }
                 /* add the text to cell */
                 cell.appendChild(cellText);
                 /* add the cell to row */
@@ -102,7 +93,7 @@ $(document).ready(function() {
         /* appends <table> into preview */
         preview.appendChild(tbl);
     }
-     var tabsdiv = $("#tabs");
+    var tabsdiv = $("#tabs");
     var tabslist = tabsdiv.find("ul");
     var nextTabNo = tabslist.find("li").length;
     /* When create button click, a new tab will generate */
