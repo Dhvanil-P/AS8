@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <!--Dhvanil Patel
 Dhvanil_patel@live.com
@@ -12,76 +10,86 @@ still haven't figured out how to put fieldset in centre.
 -->
 <html>
 <head>
-    <meta charset="UTF-8">
-    
-    <!-- This is the tile of the page. -->
-    <title>Create a multiplication table</title>
-  
+    <meta charset="UTF-8"><!-- This is the tile of the page. -->
 
+    <title>Create a multiplication table</title>
     <!-- I linked my css file here -->
     <link href="AS8Style.css" rel="stylesheet" type="text/css">
-    
     <!-- load jQuery -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    
-    <!-- load jQuery UI -->
-    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-    <link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" rel="stylesheet"><!-- load jQuery Validator -->
 
-    <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.js"></script>
-    
-    <!-- I loaded my javascript file here. -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><!-- load jQuery UI -->
+
+    <script src=
+    "//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <link href=
+    "//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css"
+    rel="stylesheet"><!-- load jQuery Validator -->
+
+    <script src=
+    "//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.js"></script><!-- I loaded my javascript file here. -->
+
     <script src="AS8Java.js" type="text/javascript"></script>
 </head>
 
 <body>
-
     <!--This is the heading.  -->
 
-	<h2>Creating an Interactive Dynamic Table</h2>
+    <h2>Creating an Interactive Dynamic Table</h2>
+    <!--fieldset to make filedset and table -->
 
-  
-        <!--fieldset to make filedset and table -->
+    <fieldset>
+        <!--putting value of legend center-->
+        <legend align="center">Please Enter The Value</legend> 
+        <!-- form starts here.-->
 
-        <fieldset>
-            <!--putting value of legend center-->
-            <legend align="center">Please Enter The Value</legend> 
-    
-    <!-- form starts here.-->
-    <div id="inputs">
-        <!-- Form starts here.-->
-        <form action="javascript:void(0)" id="form" name="form">
-            <br>
-                <tr>
-                    <td>Minimum Column Value</td>
+        <div id="inputs">
+            <!-- Form starts here.-->
 
-                    <td><input id="numOne" name="numOne" type="number"></td><br>	
-                </tr>
+            <form action="javascript:void(0)" id="form" name="form">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <button id="make" type="submit">Create
+                Table</button><button id="delete" type="button">Delete
+                Tabs</button>
 
-                <tr>
-                    <td>Maximum Column Value</td>
+                <div id="tabs">
+                    <ul></ul>
+                </div>
 
-                    <td><input id="numTwo" name="numTwo" type="number"></td><br>
+                <table>
+                    <tr>
+                        <td>Minimum Column Value</td>
 
-                <tr>
-                    <td>Minimum Row Value</td>
+                        <td><input id="numOne" name="numOne" type=
+                        "number"></td>
+                    </tr>
 
-                    <td><input id="numThree" name="numThree" type=
-                    "number"></td><br>
-                </tr>
+                    <tr>
+                        <td>Maximum Column Value</td>
 
-                <tr>
-                    <td>Maximum Row Value</td>
+                        <td><input id="numTwo" name="numTwo" type=
+                        "number"></td>
+                    </tr>
 
-                    <td><input id="numFour" name="numFour" type="number"></td><br>
-                </tr>
-				<button id="make" type="submit">Create Table</button> 
-				<button id="delete" type="button">Delete Tabs</button>
-        </form>
-    </div>
+                    <tr>
+                        <td>Minimum Row Value</td>
 
-    <div id="tabs">
-        <ul></ul>
-    </div>
+                        <td><input id="numThree" name="numThree" type=
+                        "number"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Maximum Row Value</td>
+
+                        <td><input id="numFour" name="numFour" type=
+                        "number"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </fieldset>
 </body>
 </html>
